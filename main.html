@@ -1,1 +1,139 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <style>
+        /* Add your CSS styles for better appearance */
+        body {
+            font-family: Arial, sans-serif;background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+#loginForm, #viewInventory, #addItems, #removeItems, #searchFilters {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, select, button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+#searchResultsTable {
+    margin-top: 20px;
+    </style>
+</head>
+<body>
+
+    <h1>Inventory Management System</h1>
+
+    <!-- Login / Create Account Form -->
+    <div id="loginForm">
+        <h2>Login / Create Account</h2>
+        <!-- Add your login and account creation form here -->
+        <form id="loginForm">
+            <!-- ... -->
+        </form>
+    </div>
+
+    <!-- View Inventory Table -->
+    <div id="viewInventory">
+        <h2>View Inventory</h2>
+        <table id="inventoryTable">
+            <!-- Display information about stock levels -->
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Supplier</th>
+            </tr>
+            <!-- Use JavaScript to dynamically populate this table -->
+        </table>
+    </div>
+
+    <!-- Add Items Form -->
+    <div id="addItems">
+        <h2>Add Items</h2>
+        <!-- Add your form for adding items to the inventory -->
+        <form id="addItemForm">
+            <!-- ... -->
+        </form>
+    </div>
+
+    <!-- Remove Items Form -->
+    <div id="removeItems">
+        <h2>Remove Items</h2>
+        <!-- Add your form for removing items from the inventory -->
+        <form id="removeItemForm">
+            <!-- ... -->
+        </form>
+    </div>
+
+    <!-- Searching and Filters -->
+    <div id="searchFilters">
+        <h2>Search and Filters</h2>
+        <!-- Add your search and filter options -->
+        <form id="searchForm">
+            <!-- ... -->
+        </form>
+        <!-- Display the search results in a table -->
+        <table id="searchResultsTable">
+            <!-- Use JavaScript to dynamically populate this table -->
+        </table>
+    </div>
+
+    <script>
+        // Add your JavaScript code for interactivity
+        // Use AJAX or Fetch API to communicate with the backend for database operations
+        // Populate tables, handle form submissions, etc.
+    </script>
+
+</body>
+</html> 

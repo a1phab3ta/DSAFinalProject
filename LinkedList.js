@@ -122,40 +122,10 @@ class LIterator {
         this.curr = this.curr.next;
         return data;
     }
-}
-/*
-// Example usage:
-const myList = new LinkedList();
 
-myList.add(1);
-myList.add(2);
-myList.add(3);
-
-// Print elements using the iterator
-const iterator = new LIterator(myList);
-while (iterator.hasNext()) {
-    console.log(iterator.next());
-    
+    reset(linkedList) {
+        this.curr = linkedList.head;
+    }
 }
 
-// Print size
-console.log("Size:", myList.size());
-
-// Access elements by index
-console.log("Element at index 1:", myList.get(1));
-
-// Insert an element at index 1
-myList.insert("Grapes", 1);
-
-// Print elements after insertion
-console.log("After insertion:");
-
-// Create a new iterator after the insertion
-const iteratorAfterInsertion = new LIterator(myList);
-while (iteratorAfterInsertion.hasNext()) {
-    console.log(iteratorAfterInsertion.next());
-    
-}
-
-// Print size after insertion
-console.log("Size after insertion:", myList.size());*/
+module.exports = { LinkedList, LIterator };

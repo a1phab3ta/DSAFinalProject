@@ -82,34 +82,6 @@ class Heap {
     }
 }
 
-// Helper function to validate the heap
-function isHeapValid(heap, isMinHeap) {
-    for (let i = 0; i < heap.length; i++) {
-        const leftChildIndex = 2 * i + 1;
-        const rightChildIndex = 2 * i + 2;
 
-        if (leftChildIndex < heap.length) {
-            if (isMinHeap && heap[i] > heap[leftChildIndex]) {
-                return false;
-            }
-
-            if (!isMinHeap && heap[i] < heap[leftChildIndex]) {
-                return false;
-            }
-        }
-
-        if (rightChildIndex < heap.length) {
-            if (isMinHeap && heap[i] > heap[rightChildIndex]) {
-                return false;
-            }
-
-            if (!isMinHeap && heap[i] < heap[rightChildIndex]) {
-                return false;
-            }
-        }
-    }
-
-    return true;
-}
 
 module.exports = {Heap};

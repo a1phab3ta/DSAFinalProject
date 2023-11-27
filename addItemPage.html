@@ -1,0 +1,58 @@
+<!-- addItemPage.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Item</title>
+    <!-- Add your CSS styles if needed -->
+</head>
+<body>
+
+    <h2>Add New Item</h2>
+    
+    <form id="newItemForm" onsubmit="return addItem()">
+        <label for="itemName">Name:</label>
+        <input type="text" id="itemName" name="itemName" required>
+
+        <label for="itemPrice">Price:</label>
+        <input type="number" id="itemPrice" name="itemPrice" required>
+
+        <label for="itemQuantity">Quantity:</label>
+        <input type="number" id="itemQuantity" name="itemQuantity" required>
+
+        <label for="itemSupplier">Supplier:</label>
+        <input type="text" id="itemSupplier" name="itemSupplier" required>
+
+        <button type="submit">Add Item</button>
+    </form>
+
+    <script src="./LinkedList.js"></script>
+    <script src="./heap.js"></script>
+    <script src="./inventory.js"></script>
+    <script>
+        function addItem() {
+            const itemName = document.getElementById('itemName').value;
+            const itemPrice = parseFloat(document.getElementById('itemPrice').value);
+            const itemQuantity = parseInt(document.getElementById('itemQuantity').value);
+            const itemSupplier = document.getElementById('itemSupplier').value;
+
+            const inventory = new Inventory();
+            inventory.add(itemName, itemPrice, itemQuantity, itemSupplier);
+            populateTable();
+            window.location.href = 'index.html'; // Redirect back to the main page
+            return false; // Prevent default form submission
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const newItemForm = document.getElementById('newItemForm');
+
+            newItemForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                addItem(); // Call the addItem function directly
+            });
+        });
+    </script>
+
+</body>
+</html>

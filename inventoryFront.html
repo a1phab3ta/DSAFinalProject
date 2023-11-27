@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <style>
+        /* Add your CSS styles for better appearance */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        #loginForm, #viewInventory, #addItems, #removeItems, #searchFilters {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input, select, button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #searchResultsTable {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Inventory Management System</h1>
+
+    <script src="./LinkedList.js"></script>
+    <script src="./heap.js"></script>
+    <script src="./inventory.js"></script>
+    <script>
+        function populateTable() {
+            const table = document.getElementById('inventoryTable');
+
+            // Clear existing rows
+            while (table.rows.length > 1) {
+                table.deleteRow(1);
+            }
+            const inventoryList = new LinkedList();
+            inventoryList.add(new InventorySlot(1, 'Item A', 10, 50, 'Supplier A'));
+            inventoryList.add(new InventorySlot(2, 'Item B', 5, 30, 'Supplier B'));
+            // Iterate through the linked list and populate the table
+            const iter = new LIterator(inventoryList);
+            while (iter.hasNext()) {
+                const item = iter.next();
+                const row = table.insertRow(-1);
+
+                // Add cells for each property
+                const cellId = row.insertCell(0);
+                const cellName = row.insertCell(1);
+                const cellQuantity = row.insertCell(2);
+                const cellPrice = row.insertCell(3);
+                const cellSupplier = row.insertCell(4);
+
+                // Populate cell content with item properties
+                cellId.innerHTML = item.id;
+                cellName.innerHTML = item.name;
+                cellQuantity.innerHTML = item.quantity;
+                cellPrice.innerHTML = item.price;
+                cellSupplier.innerHTML = item.supplier;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            populateTable();
+        });
+    </script>
+
+    <!-- View Inventory Table -->
+    <div id="viewInventory">
+        <h2>View Inventory</h2>
+        <table id="inventoryTable">
+            <!-- Display information about stock levels -->
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Supplier</th>
+            </tr>
+            <!-- Use JavaScript to dynamically populate this table -->
+        </table>
+    </div>
+
+    <!-- Add Items Form -->
+    <div id="addItems">
+        <h2>Add Items</h2>
+        <!-- Add your form for adding items to the inventory -->
+        <form id="addItemForm">
+            <!-- ... -->
+        </form>
+    </div>
+
+    <!-- Remove Items Form -->
+    <div id="removeItems">
+        <h2>Remove Items</h2>
+        <!-- Add your form for removing items from the inventory -->
+        <form id="removeItemForm">
+            <!-- ... -->
+        </form>
+    </div>
+
+    <!-- Searching and Filters -->
+    <div id="searchFilters">
+        <h2>Search and Filters</h2>
+        <!-- Add your search and filter options -->
+        <form id="searchForm">
+            <!-- ... -->
+        </form>
+        <!-- Display the search results in a table -->
+        <table id="searchResultsTable">
+            <!-- Use JavaScript to dynamically populate this table -->
+        </table>
+    </div>
+
+    <script>
+        // Add your JavaScript code for interactivity
+        // Use AJAX or Fetch API to communicate with the backend for database operations
+        // Populate tables, handle form submissions, etc.
+    </script>
+
+</body>
+</html>
